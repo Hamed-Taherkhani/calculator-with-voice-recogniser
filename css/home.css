@@ -22,6 +22,10 @@ body h1 {
   border-radius: 17px;
   font-size: 1.2rem;
   cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 #calculator table td section {
@@ -47,6 +51,30 @@ body h1 {
           box-sizing: border-box;
   color: #001219;
   font-size: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#display {
+  position: relative;
+}
+
+#preview-result {
+  height: 10px;
+  width: 150px;
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  padding: 1rem;
+  color: #9c9c9c;
+  font-size: 1.5rem;
+  text-align: right;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 #clear-btn {
