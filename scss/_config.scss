@@ -1,0 +1,27 @@
+$background-color: #001219;
+$num-bg-color:#3c4043;
+$operator-bg-color:#5f6368;
+$td-border-radius: 17px;
+$font-color:#fff;
+$input-value-bg-color:#fff;
+$clear-btn-color:#ff2a26;
+$equality-sign-bg-color:#26a8ffa9;
+
+$font:Ubuntu,
+sans-serif;
+
+@mixin flex($dir, $justify, $align) {
+    display: flex;
+
+    @if $dir !=null {
+        flex-direction: $dir;
+    }
+
+    @if $justify !=null {
+        justify-content: $justify;
+    }
+
+    @if $align !=null {
+        align-items: $align;
+    }
+}

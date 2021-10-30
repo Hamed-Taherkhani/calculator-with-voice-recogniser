@@ -7,43 +7,51 @@
     <title>Calculator | HT</title>
     <link rel="stylesheet" href="./css/css-reset.css" />
     <link rel="stylesheet" href="./css/home.css" />
+    <!-- Ubuntu font CDN -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap"
+      rel="stylesheet"
+    />
+    <!-- End -->
   </head>
-  <body>
-    <div id="calculator-container">
+  <body class="flex">
+    <div id="calculator-container" class="flex">
       <h1>Calculator</h1>
       <section id="calculator">
         <section id="input-value">0</section>
         <table>
           <tbody>
             <tr>
-              <td>(</td>
-              <td>)</td>
-              <td>%</td>
-              <td>CE</td>
+              <td><section class="flex">(</section></td>
+              <td><section class="flex">)</section></td>
+              <td><section class="flex">%</section></td>
+              <td><section id="clear-btn" class="flex">CE</section></td>
             </tr>
             <tr>
-              <td>7</td>
-              <td>8</td>
-              <td>9</td>
-              <td>÷</td>
+              <td class="numbers"><section class="flex">7</section></td>
+              <td class="numbers"><section class="flex">8</section></td>
+              <td class="numbers"><section class="flex">9</section></td>
+              <td><section class="flex">÷</section></td>
             </tr>
             <tr>
-              <td>4</td>
-              <td>5</td>
-              <td>6</td>
-              <td>×</td>
+              <td class="numbers"><section class="flex">4</section></td>
+              <td class="numbers"><section class="flex">5</section></td>
+              <td class="numbers"><section class="flex">6</section></td>
+              <td><section class="flex">×</section></td>
             </tr>
             <tr>
-              <td>1</td>
-              <td>2</td>
-              <td>3</td>
-              <td>−</td>
+              <td class="numbers"><section class="flex">1</section></td>
+              <td class="numbers"><section class="flex">2</section></td>
+              <td class="numbers"><section class="flex">3</section></td>
+              <td><section class="flex">−</section></td>
             </tr>
             <tr>
-              <td>0</td>
-              <td>.</td>
-              <td>=</td>
-              <td>+</td>
+              <td class="numbers"><section class="flex">0</section></td>
+              <td class="numbers"><section class="flex">.</section></td>
+              <td><section id="equlity-sign-btn" class="flex">=</section></td>
+              <td><section class="flex">+</section></td>
             </tr>
           </tbody>
           <div id="more-operator"></div>

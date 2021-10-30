@@ -1,0 +1,65 @@
+@import './config';
+
+body {
+    width: 100vw;
+    min-height: 100vh;
+    max-height: max-content;
+    background-color: $background-color;
+    color: $font-color;
+    font-family: $font;
+
+    h1 {
+        font-size: 2.5rem;
+        margin-bottom: 0.5rem;
+    }
+}
+
+#calculator {
+    table {
+        td {
+            background-color: $operator-bg-color;
+            width: 5.5rem;
+            height: 2.7rem;
+            border: 7px $background-color solid;
+            border-radius: $td-border-radius;
+            font-size: 1.2rem;
+            cursor: pointer;
+
+            section {
+                width: 100%;
+                height: 100%;
+            }
+
+            &:hover {
+                opacity: 0.8;
+            }
+        }
+
+        .numbers {
+            background-color: $num-bg-color;
+        }
+    }
+}
+
+#input-value {
+    background-color: $input-value-bg-color;
+    height: 120px;
+    margin: 7px 7px 0;
+    padding: 1rem;
+    border-radius: $td-border-radius - 10px;
+    box-sizing: border-box;
+    color: $background-color;
+    font-size: 2rem;
+}
+
+#clear-btn {
+    background-color: $clear-btn-color;
+}
+
+#equlity-sign-btn {
+    background-color: $equality-sign-bg-color;
+}
+
+.flex {
+    @include flex(column, center, center);
+}
