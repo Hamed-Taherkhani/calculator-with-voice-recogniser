@@ -63,6 +63,19 @@ body h1 {
   position: relative;
 }
 
+#microphone {
+  position: absolute;
+  right: 20px;
+  top: 10px;
+  fill: #001219;
+  cursor: pointer;
+}
+
+.mic-listening-animation {
+  -webkit-animation: mic-listening-animation 700ms ease 0s infinite alternate;
+          animation: mic-listening-animation 700ms ease 0s infinite alternate;
+}
+
 #preview-result {
   height: 10px;
   width: 150px;
@@ -99,5 +112,23 @@ body h1 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+@-webkit-keyframes mic-listening-animation {
+  0% {
+    fill: #001219;
+  }
+  100% {
+    fill: #268bff;
+  }
+}
+
+@keyframes mic-listening-animation {
+  0% {
+    fill: #001219;
+  }
+  100% {
+    fill: #268bff;
+  }
 }
 /*# sourceMappingURL=home.css.map */

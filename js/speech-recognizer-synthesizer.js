@@ -3,7 +3,8 @@ var SpeechRecognition = SpeechRecognition || webkitSpeechRecognition,
   speechSynthesizer = window.speechSynthesis,
   utterance = new SpeechSynthesisUtterance();
 
-const speechRecognizer = new SpeechRecognition(),
+const microphone = document.querySelector("#microphone"),
+  speechRecognizer = new SpeechRecognition(),
   speechGrammarList = new SpeechGrammarList(),
   grammar =
     "#JSGF V1.0; grammar colors; public <color> = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | / |";
@@ -12,9 +13,19 @@ speechGrammarList.addFromString(grammar, 1);
 speechRecognizer.interimResults = true;
 speechRecognizer.grammar = speechGrammarList;
 
-window.addEventListener("click", eventHandler);
+let isRecognizing = false;
+microphone.addEventListener("click", eventHandler);
 function eventHandler() {
-  speechRecognizer.start();
+  if (!isRecognizing) {
+    speechRecognizer.start();
+    microphone.classList = "mic-listening-animation";
+    isRecognizing = true;
+  } else {
+    speechRecognizer.abort();
+    // Remove class="mic-listening-animation" attribute. It terminate the animation.
+    microphone.removeAttribute("class");
+    isRecognizing = false;
+  }
 }
 
 let temp = "";
@@ -36,10 +47,14 @@ speechRecognizer.onresult = (event) => {
 };
 
 // When speech recognition has disconnected, operate the operation:
-utterance.rate = 0.6;
+utterance.rate = 0.4;
 utterance.volume = 1;
 speechRecognizer.onend = () => {
-  operateTheValues(displayArea.textContent, "displayArea");
-  utterance.text = temp + " is equal to " + displayArea.textContent;
-  speechSynthesizer.speak(utterance);
+  // Remove class="mic-listening-animation" attribute. It terminate the animation.
+  microphone.removeAttribute("class");
+  if (hasJSMathOperator(displayArea.textContent)) {
+    operateTheValues(displayArea.textContent, "displayArea");
+    utterance.text = temp + " is equal to " + displayArea.textContent;
+    speechSynthesizer.speak(utterance);
+  }
 };

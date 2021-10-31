@@ -58,6 +58,18 @@ body {
     position: relative;
 }
 
+#microphone {
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    fill: $background-color;
+    cursor: pointer;
+}
+
+.mic-listening-animation {
+    animation: mic-listening-animation 700ms ease 0s infinite alternate;
+}
+
 #preview-result {
     height: 10px;
     width: 150px;
@@ -82,4 +94,14 @@ body {
 
 .flex {
     @include flex(column, center, center);
+}
+
+@keyframes mic-listening-animation {
+    0% {
+        fill: $microphone-color;
+    }
+
+    100% {
+        fill: $mic-listening-color;
+    }
 }
